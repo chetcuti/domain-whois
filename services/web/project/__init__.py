@@ -9,17 +9,16 @@ site_title = "Domain WHOIS Lookup"
 
 
 @app.route("/<domain>", methods=["GET"])
-def home_get(domain):
-    sleep(0.25)
-
-    page_body = process_domain(domain)
-
-    return display_homepage(domain, page_body)
+def home_domain(domain):
+    return display_homepage(domain, process_domain(domain))
 
 
 @app.route("/", methods=["GET"])
 def home():
-    return home_get("example.com")
+    domain = "example.com"
+    page_body = process_domain(domain)
+
+    return display_homepage(domain, page_body)
 
 
 @app.route("/", methods=["POST"])

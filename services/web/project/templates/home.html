@@ -7,7 +7,7 @@
 <body style="padding-top: 20px; padding-left: 20px;">
     <div id="content">
         <h1>{{site_title}}</h1>
-        <form method="POST">
+        <form method="POST" action="/">
             <input id="domain" name="domain" placeholder="{{domain}}" style="padding: 5px; margin-top: 5px; margin-bottom: 5px;" value="{{domain}}" autofocus><BR>
             <input type="submit" name="submit" value="Lookup &gt;&gt;&gt;" onclick="$('#loading').show();">
             <div id="loading" style="display:none;"><img height="100px" width="100px" src="{{url_for('static', filename='spinner.gif')}}"></div>
